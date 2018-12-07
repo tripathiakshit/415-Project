@@ -1,0 +1,13 @@
+{
+  "name": "project415",
+  "version": "1.0.0",
+  "description": "An exploratory time line analysis of climate change and factors that impacti t",
+  "main": "index.html",
+  "author": "Akshit Tripathi",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "chart.js": "^2.7.3",
+    "typescript": "^3.1.6"
+  }
+}

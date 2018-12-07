@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css?family=Lora|Playfair+Display|Raleway:400,600');
+
+html,
+body,
+div {
+    padding: 0;
+    margin: 0;
+    font-family: "Raleway", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    -webkit-transition: 0.3s all;
+    -o-transition: 0.3s all;
+    transition: 0.3s all;
+    background: "#222";
+    color: "#eee";
+}
+
+body {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+header {
+    flex: 0 1;
+}
+
+header h1 {
+    font-family: 'Lora', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    padding: 0.5rem 1rem;
+    margin: 0;
+}
+
+header h2 {
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 0 1rem;
+    font-weight: 400;
+}
+
+header h3 {
+    font-size: 1rem;
+    font-style: italic;
+    color: #555;
+    font-weight: 600;
+    margin: 0;
+    padding: 1rem 0 1rem 1rem;
+}
+
+header nav {
+    background: midnightblue;
+    color: #eee;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    background: midnightblue;
+}
+
+header nav ul li:hover {
+    background: #3155a0;
+}
+
+header nav div {
+    padding: 1rem;
+}
+
+main {
+    padding: 1.5rem;
+    flex: 1 1 auto;
+}
+
+main.two-column {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr auto;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: "left-col""right-col";
+}
+
+@media all and (min-width: 1024px) {
+    main.two-column {
+        flex: 1 1 auto;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr;
+        -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "left-col right-col";
+    }
+}
+
+main h1,
+main h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+main table tr td:first-child {
+    text-align: right;
+    font-weight: 300;
+}
+
+main table tr td:last-child {
+    font-weight: 600;
+}
+
+#rangeSlider {
+    width: 90%;
+    margin: 0;
+    padding: 5%;
+}
+
+#gradientScale {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    width: 100%;
+    line-height: 1rem;
+    padding: 0.5rem;
+    color: #fff;
+    background: linear-gradient(to right, rgb(0, 175, 255) 0%, rgb(255, 215, 0) 50%, rgb(255, 30, 0) 100%);
+}
+
+th,
+td {
+    border-bottom: 1px solid darkgray;
+    padding: 1rem;
+}
+
+table {
+    border-collapse: collapse;
+    width: auto;
+    border-color: darkgray;
+}
+
+.left-col {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-row: 1;
+    grid-column: 1;
+    grid-area: left-col;
+    padding: 1rem;
+}
+
+.right-col {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-row: 2;
+    grid-column: 1;
+    grid-area: right-col;
+    padding: 1rem;
+}
+
+@media all and (min-width: 1024px) {
+    .left-col {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    .right-col {
+        -ms-grid-row: 1;
+        -ms-grid-column: 2;
+        grid-row: 1;
+        grid-column: 2;
+    }
+}

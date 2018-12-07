@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <script src="scripts/app.js"></script>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>415 Project</h1>
+        <h2>An Exploratory Timeline Analysis of Climate Change and Factors that Impact It</h2>
+        <h3>Ranim Aljoudi, Shaela Khan, Ayushi Pagariya, Akshit Tripathi</h3>
+        <nav>
+            <ul>
+                <li onclick="window.location='index.html'">Home</li>
+                <li onclick="window.location='stats.html'">Statistics</li>
+                <li onclick="window.location='rawData.html'">Raw Data</li>
+                <li onclick="window.location='about.html'">About</li>
+            </ul>
+            <div>
+                <input type="radio" id="lightTheme" name="theme" value="lightTheme" checked onchange="changeTheme('light')">
+                <label for="lightTheme">Light</label>
+                <input type="radio" id="darkTheme" name="theme" value="darkTheme" onchange="changeTheme('dark')">
+                <label for="darkTheme">Dark</label>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Team Members</th>
+                    <th>Contribution</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th> Akshit Tripathi </th>
+                    <th> Website Development and Data visualization</th>
+                </tr>
+
+                <tr>
+                    <th> Ayushi Pagariya </th>
+                    <th> Research for appropriate data collection for climate change and documentation </th>
+                </tr>
+
+                <tr>
+                    <th> Ranim Aljoudi </th>
+                    <th> Data cleaning and refining</th>
+                </tr>
+
+                <tr>
+                    <th> Shaela Khan </th>
+                    <th> Implementation of Machine learning models</th>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Statistics</title>
+    <script src="scripts/Chart.min.js"></script>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/app.js"></script>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>415 Project</h1>
+        <h2>An Exploratory Timeline Analysis of Climate Change and Factors that Impact It</h2>
+        <h3>Ranim Aljoudi, Shaela Khan, Ayushi Pagariya, Akshit Tripathi</h3>
+        <nav>
+            <ul>
+                <li onclick="window.location='index.html'">Home</li>
+                <li onclick="window.location='stats.html'">Statistics</li>
+                <li onclick="window.location='rawData.html'">Raw Data</li>
+                <li onclick="window.location='about.html'">About</li>
+            </ul>
+            <div>
+                <input type="radio" id="lightTheme" name="theme" value="lightTheme" checked onchange="changeTheme('light')">
+                <label for="lightTheme">Light</label>
+                <input type="radio" id="darkTheme" name="theme" value="darkTheme" onchange="changeTheme('dark')">
+                <label for="darkTheme">Dark</label>
+            </div>
+        </nav>
+    </header>
+    <main class="two-column">
+        <div class="left-col">
+            <canvas id="dataChart"></canvas>
+        </div>
+        <div class="right-col">
+            <form>
+                <h3>Select Data: </h3>
+                <select id="rangeSelector">
+                    <option value="monthlyData">Monthly</option>
+                    <option value="yearlyData">Yearly</option>
+                </select>
+                <h3>Compare:</h3>
+                <div>
+                    <select id="compSelect1">
+                        <option value="max_temp" selected>Maximum Temperature (°C)</option>
+                        <option value="min_temp">Minimum Temperature (°C)</option>
+                        <option value="mean_temp">Average Temperature (°C)</option>
+                        <option value="total_rain">Total Rain (mm)</option>
+                        <option value="total_snow">Total Snow (mm)</option>
+                        <option value="total_precip">Total Precipitation (mm)</option>
+                    </select>
+                    <span>vs.</span>
+                    <select id="compSelect2">
+                        <option value="max_temp">Maximum Temperature (°C)</option>
+                        <option value="min_temp" selected>Minimum Temperature (°C)</option>
+                        <option value="mean_temp">Average Temperature (°C)</option>
+                        <option value="total_rain">Total Rain (mm)</option>
+                        <option value="total_snow">Total Snow (mm)</option>
+                        <option value="total_precip">Total Precipitation (mm)</option>
+                    </select>
+                </div>
+                <h3>Range:</h3>
+                <table>
+                    <tr>
+                        <td>From: </td>
+                        <td>
+                            <select id="compFromYear"></select>
+                            <select id="compFromMonth"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>To: </td>
+                        <td>
+                            <select id="compToYear"></select>
+                            <select id="compToMonth"></select>
+                        </td>
+                    </tr>
+                </table><br><br>
+                <input type="reset" value="Reset">
+            </form>
+        </div>
+    </main>
+    <script>
+        const chartElement = document.getElementById("dataChart");
+        let rangeCB = document.getElementById("rangeSelector");
+        let comparator1 = document.getElementById("compSelect1");
+        let comparator2 = document.getElementById("compSelect2");
+        let compFromYear = document.getElementById("compFromYear");
+        let compFromMonth = document.getElementById("compFromMonth");
+        let compToYear = document.getElementById("compToYear");
+        let compToMonth = document.getElementById("compToMonth");
+    </script>
+    <script src="scripts/charting.js"></script>
+</body>
+
+</html>

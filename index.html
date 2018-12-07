@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/app.js"></script>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>415 Project</h1>
+        <h2>An Exploratory Timeline Analysis of Climate Change and Factors that Impact It</h2>
+        <h3>Ranim Aljoudi, Shaela Khan, Ayushi Pagariya, Akshit Tripathi</h3>
+        <nav>
+            <ul>
+                <li onclick="window.location='index.html'">Home</li>
+                <li onclick="window.location='stats.html'">Statistics</li>
+                <li onclick="window.location='rawData.html'">Raw Data</li>
+                <li onclick="window.location='about.html'">About</li>
+            </ul>
+            <div>
+                <input type="radio" id="lightTheme" name="theme" value="lightTheme" checked onchange="changeTheme('light')">
+                <label for="lightTheme">Light</label>
+                <input type="radio" id="darkTheme" name="theme" value="darkTheme" onchange="changeTheme('dark')">
+                <label for="darkTheme">Dark</label>
+            </div>
+        </nav>
+    </header>
+    <main class="two-column">
+        <div class="left-col">
+            <object data="swOntario.svg" type="image/svg+xml" id="mapHolder" width="80%" height="80%"></object>
+            <h3>Scale:</h3>
+            <div id="gradientScale">
+                <span>Cold</span>
+                <span>Hot</span>
+            </div>
+        </div>
+        <div class="right-col">
+            <h3>Select Data</h3>
+            <select id="rangeSelector">
+                <option value="monthlyData" selected>Monthly</option>
+                <option value="yearlyData">Yearly</option>
+            </select>
+            <select id="tempTypeSelector">
+                <option value="max_temp">Maximum Temperature</option>
+                <option value="min_temp">Minimum Temperature</option>
+                <option value="mean_temp" selected>Average Temperature</option>
+            </select>
+            <h3>Info about current selection</h3>
+            <table>
+                <tr>
+                    <td id="timePeriodText">Year:</td>
+                    <td id="timePeriodCell">
+                        <span id="monthSpan"></span><span id="yearSpan"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Max Temp (°C):</td>
+                    <td id="maxTempCell"></td>
+                </tr>
+                <tr>
+                    <td>Min Temp (°C):</td>
+                    <td id="minTempCell"></td>
+                </tr>
+                <tr>
+                    <td>Average Temp (°C):</td>
+                    <td id="avgTempCell"></td>
+                </tr>
+                <tr>
+                    <td>Total Precipitation (mm):</td>
+                    <td id="totalPrecipCell"></td>
+                </tr>
+            </table>
+            <input type="range" min="0" max="867" width="800px" id="rangeSlider">
+        </div>
+    </main>
+    <script>
+        let slider = document.getElementById("rangeSlider");
+        let svgHolder = document.getElementById("mapHolder");
+        let svg;
+        let rangeCB = document.getElementById("rangeSelector");
+        let tempTypeCB = document.getElementById("tempTypeSelector");
+        let timePeriodText = document.getElementById("timePeriodText");
+        let yearCell = document.getElementById("yearSpan");
+        let monthCell = document.getElementById("monthSpan");
+        let maxTempCell = document.getElementById("maxTempCell");
+        let minTempCell = document.getElementById("minTempCell");
+        let avgTempCell = document.getElementById("avgTempCell");
+        let totalPrecipCell = document.getElementById("totalPrecipCell");
+    </script>
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>
