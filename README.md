@@ -4,4 +4,4 @@ Project for Advanced Database Systems (03-60-415) class at University of Windsor
 
 Data gathered from Windsor Riverside Weather station.
 
-Made with vanilla HTML, CSS and JS. Hosted on Firebase.
+Made with vanilla HTML, CSS and JS. [Hosted on Firebase](https://project-2fd6e.firebaseapp.com/).
